@@ -1,15 +1,13 @@
 import { FC } from "react";
 
 type Card = {
+  id?: string;
   children: React.ReactNode;
 };
-export const Card: FC<Card> = ({ children }) => {
+export const Card: FC<Card> = ({ id, children }) => {
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl">
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">世界遺産検定問題</h2>
-        {children}
-      </div>
+    <div id={id} className="card bg-base-100 shadow-xl w-full">
+      <div className="card-body items-center text-center">{children}</div>
     </div>
   );
 };
